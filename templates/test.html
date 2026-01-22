@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typing Test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Typing Speed Test</h1>
+
+    <p id="target-text">
+        The quick brown fox jumps over the lazy dog.
+    </p>
+
+    <textarea id="typing-area" rows="5" cols="60" placeholder="Start typing here..."></textarea>
+
+    <!-- Results container, hidden by default -->
+    <div id="results" style="display:none; margin-top:20px;">
+        <h2>Results</h2>
+        <p id="time"></p>
+        <p id="wpm"></p>
+        <p id="cpm"></p>
+        <p id="accuracy"></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
