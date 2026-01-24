@@ -44,3 +44,40 @@ h1, h2 {
     font-weight: 600;
 }
 
+
+#text-display {
+    font-size: 24px;
+    width: 60%;
+    margin: 20px auto;
+    line-height: 1.5;
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#typing-area {
+    width: 60%;
+    height: 0px;
+    opacity: 0;
+    position: absolute;
+    left: -9999px;
+}
+
+.correct {
+    color: #4caf50; /* green */
+}
+
+.incorrect {
+    color: #f44336; /* red */
+}
+
+.current {
+    border-left: 2px solid #000;
+    animation: caret 1s step-start infinite;
+}
+
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}
