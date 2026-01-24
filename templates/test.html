@@ -9,22 +9,31 @@
 <body>
     <h1>Typing Speed Test</h1>
 
-    <p id="target-text">
-        The quick brown fox jumps over the lazy dog.
-    </p>
+    <select id="test-duration">
+        <option value="15">15 seconds</option>
+        <option value="30">30 seconds</option>
+    </select>
 
-    <textarea id="typing-area" rows="5" cols="60" placeholder="Start typing here..."></textarea>
+    <div id="timer-display">...</div>
 
-    <!-- Results container, hidden by default -->
-    <div id="results" style="display:none; margin-top:20px;">
-        <h2>Results</h2>
-        <p id="time"></p>
-        <p id="wpm"></p>
-        <p id="cpm"></p>
-        <p id="accuracy"></p>
-    </div>
+    <!-- <p id="target-text"></p> -->
+    <!-- <p>Next: <span id="next-char"></span></p> -->
 
+    <div id="text-display"></div>
+
+    <textarea id="typing-area"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+        placeholder="Start typing here..."
+    ></textarea>
+
+
+
+    <div id="results" style="display:none; margin-top:20px;"></div>
+
+    <script src="{{ url_for('static', filename='js/words.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
-
 </html>
