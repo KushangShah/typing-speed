@@ -1,16 +1,21 @@
 # Typing Speed Test (Flask + JavaScript)
 
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![Flask](https://img.shields.io/badge/Flask-2.x-black.svg)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Status](https://img.shields.io/badge/Status-Active-success.svg)
+![Deploy](https://img.shields.io/badge/Deploy-Render-purple.svg)
+[![Render](https://img.shields.io/badge/Hosted%20on-Render-%23652DB7)](https://typing-speed-see0.onrender.com)
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue.svg) ![Flask](https://img.shields.io/badge/Flask-2.x-black.svg) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow.svg) ![License](https://img.shields.io/badge/License-MIT-green.svg) ![Status](https://img.shields.io/badge/Status-Active-success.svg) ![Deploy](https://img.shields.io/badge/Deploy-Render-purple.svg) [![Render](https://img.shields.io/badge/Hosted%20on-Render-%23652DB7)](https://your-render-url.onrender.com)
+A web-based typing speed test inspired by modern typing platforms like Monkeytype, built using **Flask (Python)** for backend and **JavaScript** for real-time typing interaction, metrics, and highlighting.
 
-
-A web-based typing speed test inspired by other speed typing test on websites, built using **Flask (Python)** for backend and **JavaScript** for real-time typing metrics.
-
-This project measures:
-- WPM (Words Per Minute)
-- CPM (Characters Per Minute)
-- Accuracy
-- Total time taken
+The test measures:
+- **WPM** (Words Per Minute)
+- **CPM** (Characters Per Minute)
+- **Accuracy**
+- **Total characters typed**
+- **Time duration**
 
 ---
 
@@ -22,17 +27,20 @@ This project measures:
 
 ## 🧠 Project Overview
 
-This project helps users test and improve their typing speed in a clean and minimal interface.
+This project helps users test and improve their typing speed in a clean and minimal interface, with real-time input feedback and timed tests.
 
-I started with the foundations of a full-stack web application, learning:
+While building this project, I learned:
 
-- How to set up Flask backend
-- How to serve HTML templates
-- How to integrate CSS & JS
-- How to measure typing time in the browser
-- How to compute typing metrics (WPM, CPM, Accuracy)
-- How to deploy a Flask project to the web
-- How to store results in a SQLite database
+- How to set up a Flask backend
+- How to serve templates using Jinja
+- How to integrate CSS & JavaScript for real-time UI
+- How to measure input in real-time using JS events
+- How to implement a timer-based typing test
+- How to compute WPM, CPM, accuracy
+- How to add random text generation
+- How to highlight correct/incorrect characters like Monkeytype
+- How to deploy a Flask project using Render
+- How to set up optional SQLite storage for results
 
 ---
 
@@ -55,72 +63,58 @@ I started with the foundations of a full-stack web application, learning:
 
 ---
 
-## ✨ Current Features
-
-✔ Display text to type  
-✔ Real-time text input tracking  
-✔ Start timer on first keystroke  
-✔ Stop timer when finished  
-✔ Calculate:
-- WPM (Words Per Minute)
-- CPM (Characters Per Minute)
-- Accuracy (currently 100% placeholder)
-- Total time  
-
-✔ Display results on screen  
-✔ Simple and clean UI  
-✔ Fully deployed online  
-
----
-
 ## 📦 Optional Backend Persistence
 
-We integrated an API route:
+There is an API endpoint:
 
 ```python
 /submit_results
 ````
 
-which allows saving typing test results to SQLite.
-This allows future features like:
+which allows saving typing test results into a SQLite database.
 
-* Performance history
+This enables potential future features like:
+
+* Saved performance history
 * Leaderboards
 * User accounts
 
 ---
 
-## 🗺️ Roadmap (Coming Soon)
+## 🗺️ Roadmap (Future Improvements)
 
 Planned improvements include:
 
-* [ ] Real accuracy calculation (character-level)
-* [ ] Random text generator
-* [ ] Highlighting correct/incorrect characters
-* [ ] Dark mode theme
-* [ ] Animated caret
+* [x] Real accuracy calculation (character-level)
+* [x] Random text generator
+* [x] Highlighting correct/incorrect characters
+* [x] Animated caret / current-position indicator
+* [x] Timed test mode (15s / 30s)
 * [ ] Restart test button
-* [ ] Results history page
+* [ ] Live WPM display during typing
+* [ ] Dark mode theme support
+* [ ] Multiple difficulty modes
+* [ ] Stats history page
 * [ ] Leaderboard system
-* [ ] User authentication (maybe)
-* [ ] Postgres support for persistence in production
+* [ ] User authentication (optional)
+* [ ] Postgres support for production persistence
 
 ---
 
 ## 💻 Local Development Setup
 
-Clone the repository
+Clone the repository:
 
 ```bash
 git clone https://github.com/yourusername/typing-speed.git
 cd typing-speed
 ```
 
-Create virtual environment:
+Create a virtual environment:
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/bin/activate   # Windows: venv\Scripts\activate
 ```
 
 Install dependencies:
@@ -135,9 +129,9 @@ Run the app:
 python app.py
 ```
 
-Then open in browser:
+Open in browser:
 
-```bash
+```
 http://127.0.0.1:5000
 ```
 
@@ -158,8 +152,9 @@ typing-speed/
 │  ├─ css/
 │  │  └─ style.css
 │  └─ js/
-│     └─ script.js
-└─ results.db
+│     ├─ script.js
+│     └─ words.js
+└─ results.db (optional)
 ```
 
 ---
@@ -173,3 +168,5 @@ Contributions are welcome! Fork the project and submit a PR.
 ## 📄 License
 
 MIT License © 2026 KushangShah
+
+
