@@ -9,6 +9,8 @@
 <body>
     <h1>Typing Speed Test</h1>
 
+    <button id="dark-toggle">🌙 Dark Mode</button>
+
     <select id="test-duration">
         <option value="15">15 seconds</option>
         <option value="30">30 seconds</option>
@@ -31,7 +33,7 @@
 
 
 
-    <div id="results" style="display:none; margin-top:20px;"></div>
+    <div id="results"></div>
 
     <script src="{{ url_for('static', filename='js/words.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
