@@ -158,3 +158,10 @@ window.onload = () => {
 textDisplay.addEventListener("click", () => {
     typingArea.focus();
 });
+
+// toggle dark mode
+const darkToggle = document.getElementById("dark-toggle");
+
+darkToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+});
